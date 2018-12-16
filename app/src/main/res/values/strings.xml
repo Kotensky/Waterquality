@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Water quality</string>
+    <string name="chooser_text">Виберіть txt файл</string>
+</resources>
