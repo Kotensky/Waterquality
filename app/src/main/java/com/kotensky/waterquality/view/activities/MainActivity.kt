@@ -3,16 +3,14 @@ package com.kotensky.waterquality.view.activities
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import com.kotensky.waterquality.R
 import com.kotensky.waterquality.di.components.DaggerScreenComponent
+import com.kotensky.waterquality.view.activities.AddStatisticActivity.Companion.ADD_STATISTIC_REQUEST_CODE
 import kotlinx.android.synthetic.main.activity_main.*
 
 
 class MainActivity : BaseActivity() {
 
-
-    private val PICK_TXT_REQUEST_CODE = 24
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,19 +18,14 @@ class MainActivity : BaseActivity() {
         setSupportActionBar(toolbar)
 
         addWaterDataFab.setOnClickListener { view ->
-            val intent = Intent()
-                    .setType("text/plain")
-                    .setAction(Intent.ACTION_GET_CONTENT)
-            startActivityForResult(
-                    Intent.createChooser(intent, getString(R.string.chooser_text)),
-                    PICK_TXT_REQUEST_CODE)
+            startActivityForResult(Intent(this, AddStatisticActivity::class.java), ADD_STATISTIC_REQUEST_CODE)
         }
     }
 
     public override fun onActivityResult(requestCode: Int, resultCode: Int, intent: Intent?) {
         super.onActivityResult(requestCode, resultCode, intent)
-        if (requestCode == PICK_TXT_REQUEST_CODE && resultCode == Activity.RESULT_OK) {
-            Log.e("TAG", intent?.data?.toString())
+        if (requestCode == ADD_STATISTIC_REQUEST_CODE && resultCode == Activity.RESULT_OK) {
+//            presenter.loadData()
         }
     }
 

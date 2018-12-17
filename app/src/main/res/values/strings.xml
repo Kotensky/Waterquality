@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Water quality</string>
     <string name="chooser_text">Виберіть txt файл</string>
+    <string name="hint_file_name">Введіть ім\'я файлу</string>
+    <string name="attach_file_hint">Виберіть txt файл</string>
+
 </resources>
