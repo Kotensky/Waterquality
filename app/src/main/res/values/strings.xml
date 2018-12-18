@@ -3,5 +3,19 @@
     <string name="chooser_text">Виберіть txt файл</string>
     <string name="hint_file_name">Введіть ім\'я файлу</string>
     <string name="attach_file_hint">Виберіть txt файл</string>
+    <string name="file_name_empty_error">Назва файлу не може бути пустою</string>
+    <string name="attach_file_empty_error">Зчитування даних не вдалось. Перевірте коректність даних.</string>
+    <string name="install_file_manager_msg">Встановіть файловий менеджер</string>
+    <string name="attach_file_missing_error">Виберіть файл</string>
+    <string name="first_measure_desc">Перший замір: </string>
+    <string name="first_measure_tmp">%1$s\n%2$s</string>
+    <string name="base_empty_msg">Наразі база порожня. Імпортуйте дані для початку роботи</string>
+    <string name="activity_add_statistic_title">Імпортування даних</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="lat_tmp">Широта %1$s</string>
+    <string name="lon_tmp">Довгота %1$s</string>
+    <string name="temperature_tmp">Темп: %1$s°С</string>
+    <string name="ph_tmp">ph: %1$s</string>
+    <string name="ppm_tmp">ppm: %1$s</string>
 
 </resources>
