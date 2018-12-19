@@ -1,8 +1,10 @@
 package com.kotensky.waterquality.view.activities
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
+import android.view.Menu
 import android.view.MenuItem
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -28,7 +30,6 @@ class StatisticDetailsActivity : BaseActivity(), OnMapReadyCallback, ListItemCli
 
     @Inject
     lateinit var adapter: StatisticDetailsAdapter
-
 
     private var mainEntity: StatisticMainEntity? = null
     private var googleMap: GoogleMap? = null
@@ -90,10 +91,21 @@ class StatisticDetailsActivity : BaseActivity(), OnMapReadyCallback, ListItemCli
                                 ?: 0.0), 14F))
     }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_details, menu)
+        return true
+    }
+
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         return when (item?.itemId) {
             android.R.id.home -> {
                 finish()
+                true
+            }
+            R.id.chart_action -> {
+                val intent = Intent(this, StatisticChartsActivity::class.java)
+                intent.putExtra(STATISTIC_DETAILS_ENTITY_KEY, mainEntity)
+                startActivity(intent)
                 true
             }
             else -> super.onOptionsItemSelected(item)

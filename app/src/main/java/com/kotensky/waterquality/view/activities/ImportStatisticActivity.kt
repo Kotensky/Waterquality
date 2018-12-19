@@ -25,7 +25,6 @@ import javax.inject.Inject
 
 class ImportStatisticActivity : BaseActivity(), DBView {
 
-
     companion object {
         const val ADD_STATISTIC_REQUEST_CODE = 22
         private const val PICK_TXT_REQUEST_CODE = 23

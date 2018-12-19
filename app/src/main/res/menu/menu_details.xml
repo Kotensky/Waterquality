@@ -3,4 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.kotensky.waterquality.view.activities.MainActivity">
 
+    <item
+        android:id="@+id/chart_action"
+        android:icon="@drawable/ic_chart"
+        android:title="@string/chart"
+        app:showAsAction="ifRoom" />
+
 </menu>

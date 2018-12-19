@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Water quality</string>
+    <string name="app_desc">Моніторинг\nякості вод</string>
     <string name="chooser_text">Виберіть txt файл</string>
     <string name="hint_file_name">Введіть ім\'я файлу</string>
     <string name="attach_file_hint">Виберіть txt файл</string>
@@ -15,7 +16,12 @@
     <string name="lat_tmp">Широта %1$s</string>
     <string name="lon_tmp">Довгота %1$s</string>
     <string name="temperature_tmp">Темп: %1$s°С</string>
-    <string name="ph_tmp">ph: %1$s</string>
+    <string name="ph_tmp">pH: %1$s</string>
     <string name="ppm_tmp">ppm: %1$s</string>
+    <string name="chart">Графіки</string>
+
+    <string name="page_title_0">Температура</string>
+    <string name="page_title_1">pH</string>
+    <string name="page_title_2">ppm</string>
 
 </resources>
