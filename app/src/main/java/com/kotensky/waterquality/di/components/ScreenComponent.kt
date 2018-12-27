@@ -14,5 +14,7 @@ interface ScreenComponent {
     fun inject(importStatisticActivity: ImportStatisticActivity)
     fun inject(statisticDetailsActivity: StatisticDetailsActivity)
     fun inject(statisticChartsActivity: StatisticChartsActivity)
+    fun inject(editStatisticMainActivity: EditStatisticMainActivity)
+    fun inject(editStatisticDataItemActivity: EditStatisticDataItemActivity)
 
 }

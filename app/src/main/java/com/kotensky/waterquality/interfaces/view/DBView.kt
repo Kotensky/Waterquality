@@ -4,7 +4,9 @@ import com.kotensky.waterquality.model.entities.StatisticMainEntity
 
 interface DBView {
 
-    fun onStatisticAdded() {}
+    fun onStatisticInserted() {}
+
+    fun onStatisticRemoved() {}
 
     fun showData(statistics: List<StatisticMainEntity?>) {}
 

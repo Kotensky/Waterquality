@@ -7,6 +7,7 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE" />
     <uses-permission android:name="android.permission.FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:name=".application.WaterQualityApplication"
@@ -40,6 +41,14 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".view.activities.StatisticChartsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".view.activities.EditStatisticMainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".view.activities.EditStatisticDataItemActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
 

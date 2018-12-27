@@ -22,6 +22,12 @@ abstract class BaseActivity : AppCompatActivity() {
         Toast.makeText(applicationContext, text, Toast.LENGTH_SHORT).show()
     }
 
+    fun showToastLong(text: String?) {
+        if (text.isNullOrEmpty())
+            return
+        Toast.makeText(applicationContext, text, Toast.LENGTH_LONG).show()
+    }
+
     protected abstract fun inject()
 
 }

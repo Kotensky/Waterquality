@@ -17,7 +17,17 @@ class DBPresenter @Inject constructor(
 
     private val compositeDisposable: CompositeDisposable? = CompositeDisposable()
 
+
+
+    fun editStatistic(statisticMainEntity: StatisticMainEntity) {
+        insertStatistic(statisticMainEntity)
+    }
+
     fun addStatistic(statisticMainEntity: StatisticMainEntity) {
+        insertStatistic(statisticMainEntity)
+    }
+
+    private fun insertStatistic(statisticMainEntity: StatisticMainEntity) {
         Completable.fromAction { statisticDao.insertStatistic(statisticMainEntity) }
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -27,7 +37,7 @@ class DBPresenter @Inject constructor(
                     }
 
                     override fun onComplete() {
-                        view?.onStatisticAdded()
+                        view?.onStatisticInserted()
                         view?.hideLoading()
                     }
 
@@ -49,6 +59,29 @@ class DBPresenter @Inject constructor(
 
                     override fun onSuccess(statistics: List<StatisticMainEntity?>) {
                         view?.showData(statistics)
+                        view?.hideLoading()
+                    }
+
+                    override fun onError(e: Throwable) {
+                        e.printStackTrace()
+                        view?.hideLoading()
+                    }
+                })
+    }
+
+
+
+    fun removeStatistic(statisticMainEntity: StatisticMainEntity) {
+        Completable.fromAction { statisticDao.deleteStatistic(statisticMainEntity) }
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe( object : CompletableObserver {
+                    override fun onSubscribe(d: Disposable) {
+                        compositeDisposable?.add(d)
+                    }
+
+                    override fun onComplete() {
+                        view?.onStatisticRemoved()
                         view?.hideLoading()
                     }
 

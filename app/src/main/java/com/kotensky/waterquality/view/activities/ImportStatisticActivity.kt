@@ -14,6 +14,7 @@ import com.kotensky.waterquality.interfaces.view.DBView
 import com.kotensky.waterquality.model.entities.StatisticDataEntity
 import com.kotensky.waterquality.model.entities.StatisticMainEntity
 import com.kotensky.waterquality.presenter.DBPresenter
+import com.kotensky.waterquality.utils.sortDataListByDate
 import kotlinx.android.synthetic.main.activity_add_statistic.*
 import java.io.BufferedReader
 import java.io.File
@@ -33,6 +34,7 @@ class ImportStatisticActivity : BaseActivity(), DBView {
 
     @Inject
     lateinit var presenter: DBPresenter
+
 
     private val dataList = ArrayList<StatisticDataEntity?>()
 
@@ -98,8 +100,10 @@ class ImportStatisticActivity : BaseActivity(), DBView {
                 if (dataList.isEmpty()) {
                     showToast(getString(R.string.attach_file_empty_error))
                 } else {
-                    attachFileTxt.text = File(getAbsolutePath(intent.data)).name
+                    attachFileImg.setImageResource(R.drawable.ic_check_circle)
+                    attachFileTxt.text = getString(R.string.file_attached)
                     attachFileTxt.setTextColor(ContextCompat.getColor(this, R.color.colorAccent))
+                    attachFileTxt.text = File(getAbsolutePath(intent.data)).name
                 }
             } catch (e: IOException) {
                 e.printStackTrace()
@@ -133,6 +137,8 @@ class ImportStatisticActivity : BaseActivity(), DBView {
 
             }
         }
+        sortDataListByDate(dataList, Locale.getDefault())
+
         br.close()
     }
 
@@ -147,7 +153,7 @@ class ImportStatisticActivity : BaseActivity(), DBView {
             null
     }
 
-    override fun onStatisticAdded() {
+    override fun onStatisticInserted() {
         setResult(Activity.RESULT_OK)
         finish()
     }

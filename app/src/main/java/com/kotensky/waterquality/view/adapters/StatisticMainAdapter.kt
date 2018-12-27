@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.kotensky.waterquality.R
-import com.kotensky.waterquality.interfaces.ListItemClickListener
+import com.kotensky.waterquality.interfaces.MainStatisticItemClickListener
 import com.kotensky.waterquality.model.entities.StatisticMainEntity
 import kotlinx.android.synthetic.main.statistic_main_item.view.*
 import javax.inject.Inject
@@ -13,8 +13,8 @@ import javax.inject.Inject
 class StatisticMainAdapter @Inject constructor() :
         RecyclerView.Adapter<StatisticMainAdapter.StatisticMainViewHolder>() {
 
-    var statistics: ArrayList<StatisticMainEntity?>? = null
-    var listener: ListItemClickListener? = null
+    var statistics: List<StatisticMainEntity?>? = null
+    var listener: MainStatisticItemClickListener? = null
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StatisticMainViewHolder {
@@ -34,6 +34,9 @@ class StatisticMainAdapter @Inject constructor() :
                         statisticItem.data?.getOrNull(0)?.date ?: "")
         holder.itemView.statisticMainItemCard?.setOnClickListener {
             listener?.onItemClick(position)
+        }
+        holder.itemView.moreImg?.setOnClickListener {
+            listener?.onItemClickMore(it, position)
         }
     }
 

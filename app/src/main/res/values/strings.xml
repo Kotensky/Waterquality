@@ -5,6 +5,7 @@
     <string name="hint_file_name">Введіть ім\'я файлу</string>
     <string name="attach_file_hint">Виберіть txt файл</string>
     <string name="file_name_empty_error">Назва файлу не може бути пустою</string>
+    <string name="file_attached">Файл прикріплено</string>
     <string name="attach_file_empty_error">Зчитування даних не вдалось. Перевірте коректність даних.</string>
     <string name="install_file_manager_msg">Встановіть файловий менеджер</string>
     <string name="attach_file_missing_error">Виберіть файл</string>
@@ -18,10 +19,38 @@
     <string name="temperature_tmp">Темп: %1$s°С</string>
     <string name="ph_tmp">pH: %1$s</string>
     <string name="ppm_tmp">ppm: %1$s</string>
+
     <string name="chart">Графіки</string>
 
     <string name="page_title_0">Температура</string>
     <string name="page_title_1">pH</string>
     <string name="page_title_2">ppm</string>
+    <string name="edit_statistic_title">Редагування</string>
+    <string name="remove_action">Видалити</string>
+    <string name="edit_action">Редагувати</string>
+    <string name="export_action">Експортувати</string>
+    <string name="add_item">Додати елемент</string>
+    <string name="remove_dialog_title">Видалити елемент?</string>
+    <string name="remove_dialog_message">Ви впевнені що хочете видалити елемент?</string>
+    <string name="remove_dialog_message_tmp">Ви впевнені що хочете видалити елемент \"%s\"?</string>
+    <string name="yes">Так</string>
+    <string name="cancel">Відміна</string>
+
+    <string name="hint_time">Час</string>
+    <string name="hint_date">Дата</string>
+    <string name="hint_lat">Широта</string>
+    <string name="hint_lon">Довгота</string>
+    <string name="hint_temperature">Температура</string>
+    <string name="hint_ph">pH</string>
+    <string name="hint_ppm">ppm</string>
+
+    <string name="field_time_empty_error">Поле "Час" не може бути пустим</string>
+    <string name="field_date_empty_error">Поле "Дата" не може бути пустим</string>
+    <string name="field_empty_error">Поле не може бути пустим</string>
+    <string name="items_list_empty_error">Додайте елементи</string>
+    <string name="field_data_error">Вказане значення недопустиме</string>
+    <string name="saved_tmp">Збережено файл %s</string>
+    <string name="need_write_external_permission">Для експорту даних потрібен дозвіл за зберігання</string>
+    <string name="go_to_settings">До налаштувань</string>
 
 </resources>

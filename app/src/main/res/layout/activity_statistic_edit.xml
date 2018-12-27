@@ -2,10 +2,9 @@
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/rootView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.activities.MainActivity">
+    tools:context=".view.activities.StatisticDetailsActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -21,25 +20,33 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <TextView
-        android:id="@+id/dataBaseEmptyTxt"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
-        android:padding="32dp"
-        android:text="@string/base_empty_msg"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:visibility="gone"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
-
-    <android.support.v4.widget.SwipeRefreshLayout
-        android:id="@+id/dataSwipeRefresh"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="gone"
+        android:orientation="vertical"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/fileNameInputContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="12dp"
+            android:textColorHint="@color/text_gray">
+
+
+            <EditText
+                android:id="@+id/fileNameInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_file_name"
+                android:inputType="textCapWords"
+                android:textColor="@color/black" />
+
+        </android.support.design.widget.TextInputLayout>
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/dataRecycler"
@@ -48,14 +55,14 @@
             android:clipToPadding="false"
             android:padding="4dp" />
 
-    </android.support.v4.widget.SwipeRefreshLayout>
+    </LinearLayout>
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/addWaterDataFab"
+        android:id="@+id/confirmFab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
-        android:src="@drawable/ic_add_white" />
+        android:src="@drawable/ic_check_white" />
 
 </android.support.design.widget.CoordinatorLayout>

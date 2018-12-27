@@ -14,7 +14,7 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.kotensky.waterquality.R
 import com.kotensky.waterquality.di.components.DaggerScreenComponent
-import com.kotensky.waterquality.interfaces.ListItemClickListener
+import com.kotensky.waterquality.interfaces.StatisticDetailsItemClickListener
 import com.kotensky.waterquality.model.entities.StatisticMainEntity
 import com.kotensky.waterquality.view.adapters.StatisticDetailsAdapter
 import kotlinx.android.synthetic.main.activity_statistic_details.*
@@ -22,7 +22,7 @@ import javax.inject.Inject
 
 
 
-class StatisticDetailsActivity : BaseActivity(), OnMapReadyCallback, ListItemClickListener {
+class StatisticDetailsActivity : BaseActivity(), OnMapReadyCallback, StatisticDetailsItemClickListener {
 
     companion object {
         const val STATISTIC_DETAILS_ENTITY_KEY = "statistic_details_entity_key"

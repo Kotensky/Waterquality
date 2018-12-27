@@ -4,10 +4,15 @@ import java.io.Serializable
 
 
 class StatisticDataEntity(
-        var date: String?,
-        var time: String?,
-        var lat: Double?,
-        var lon: Double?,
-        var temperature: Float?,
-        var ph: Float?,
-        var ppm: Float?) : Serializable
+        var time: String? = null,
+        var date: String? = null,
+        var lat: Double? = null,
+        var lon: Double? = null,
+        var temperature: Float? = null,
+        var ph: Float? = null,
+        var ppm: Float? = null) : Serializable {
+
+    override fun toString(): String {
+        return "$time;$date;$lat;$lon;$temperature;$ph;$ppm;"
+    }
+}
